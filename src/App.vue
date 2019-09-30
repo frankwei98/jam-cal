@@ -6,7 +6,7 @@
       <router-link to="/about">About</router-link> |
       <a href="https://tower.im/join?t=431934de2115aaa8f943bbe00e8d1c0c">注册账户</a>
     </div>
-    <router-view/>
+    <router-view style="margin: 0 20px"/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 #nav {
