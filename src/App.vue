@@ -4,11 +4,22 @@
       <h1 class="title">Andoromeda Jam Calendar</h1>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <a href="https://tower.im/join?t=431934de2115aaa8f943bbe00e8d1c0c">注册账户</a>
+      <a :href="TeamInviteLink" target="_blank" rel="noopener noreferrer">注册账户</a>
     </div>
     <router-view style="margin: 0 20px"/>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'The Vue App',
+  computed: {
+    TeamInviteLink() {
+      return process.env.VUE_APP_TOWER_INVITE_LINK;
+    },
+  },
+};
+</script>
 
 <style>
 

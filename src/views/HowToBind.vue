@@ -6,7 +6,7 @@
     <br>
     2. 点击👉 <a :href="teamPersonalSettingLink"><Button>绑定邮箱</Button></a>
     <br>
-    3. 使用 <a :href="teamCalendarUrl"><Button>Tower 创建日程</Button></a>
+    3. 使用 <a :href="teamCalendarUrl"><Button>Tower 创建团队日程</Button></a>
   </div>
 </template>
 
