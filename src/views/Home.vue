@@ -7,6 +7,7 @@
 
 <script>
 import moment from 'moment';
+import { getCalendar } from '../util/backend';
 
 export default {
   name: 'home',
@@ -16,14 +17,18 @@ export default {
     options: {
       editable: true,
     },
+    calendarEvent: [],
   }),
   computed: {
     userId() {
       return process.env.VUE_APP_TOWER_USER_ID;
     },
+    calendarId() {
+      return process.env.VUE_APP_TOWER_CALENDAR_ID;
+    },
   },
   methods: {
-    initCalendaer() {
+    initCalendar() {
       const now = moment()
         .minutes(0)
         .seconds(0)
@@ -51,9 +56,15 @@ export default {
         });
       }
     },
+    async fetchCalendar() {
+      const { calendarId, userId } = this;
+      const result = await getCalendar({ calendarId, userId });
+      console.log(result);
+    },
   },
   created() {
-    this.initCalendaer();
+    this.initCalendar();
+    this.fetchCalendar();
   },
 };
 </script>
