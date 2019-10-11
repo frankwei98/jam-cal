@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <timeline ref="timeline" :items="items" :groups="groups" :options="options"></timeline>
-    {{userId}}
   </div>
 </template>
 
@@ -57,8 +56,8 @@ export default {
       }
     },
     async fetchCalendar() {
-      const { calendarId, userId } = this;
-      const result = await getCalendar({ calendarId, userId });
+      const { calendarId } = this;
+      const result = await getCalendar({ calendarId });
       console.log(result);
     },
   },
