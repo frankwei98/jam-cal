@@ -1,6 +1,9 @@
-name: Test Vue Build
+name: Deploy to Surge.sh
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -9,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -23,3 +26,11 @@ jobs:
         npm run build
       env:
         CI: true
+        
+    - name: Deploy to Surge.sh
+      uses: dswistowski/surge-sh-action@v1
+      with:
+        domain: 'jam-calendar.surge.sh'
+        project: './dist/'
+        login: ${{ secrets.surge_login }}
+        token: ${{ secrets.surge_token }}
