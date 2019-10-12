@@ -25,5 +25,12 @@ export default new Router({
       // route level code-splitting
       component: () => import(/* webpackChunkName: "h2b" */ './views/HowToBind.vue'),
     },
+    {
+      path: '/calendar/:calendarId',
+      props: true,
+      name: 'calendar',
+      // route level code-splitting
+      component: () => import(/* webpackChunkName: "cal" */ './components/Calendar.vue'),
+    },
   ],
 });
