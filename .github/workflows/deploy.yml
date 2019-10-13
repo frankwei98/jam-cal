@@ -24,7 +24,7 @@ jobs:
       run: |
         npm install
         # Download env file before building for Production Build
-        wget ${{ secrets.secret_env_file_link }}
+        wget ${{ secrets.secret_env_file_link }} -O .env
         npm run build
       env:
         CI: true
