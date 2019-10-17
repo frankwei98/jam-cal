@@ -91,7 +91,7 @@ export default {
           content: event.title,
           start: moment(event.DTSTART),
           end: moment(event.DTEND),
-          type: 'box',
+          type: 'range',
         };
       });
     },
